@@ -58,7 +58,7 @@ function App() {
   const countriesInGroup = countriesData.filter((country) => country.group > 0);
 
   return (
-      <div className="flex flex-col items-center justify-center min-h-screen lg:flex-row gap-4">
+      <div className="flex flex-col justify-center min-h-screen lg:flex-row gap-4 items-start">
         <Compare countries={countriesInGroup} />
 
         <div>
