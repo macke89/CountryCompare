@@ -190,5 +190,85 @@
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg",
     "continent": "Africa"
+  },
+  {
+    "name": "Sweden",
+    "population": 10400000,
+    "gdp": 630000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Sweden.svg",
+    "continent": "Europe"
+  },
+  {
+    "name": "Switzerland",
+    "population": 8700000,
+    "gdp": 810000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg",
+    "continent": "Europe"
+  },
+  {
+    "name": "Thailand",
+    "population": 70000000,
+    "gdp": 545000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg",
+    "continent": "Asia"
+  },
+  {
+    "name": "Iran",
+    "population": 87000000,
+    "gdp": 388000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg",
+    "continent": "Asia"
+  },
+  {
+    "name": "Pakistan",
+    "population": 230000000,
+    "gdp": 347000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg",
+    "continent": "Asia"
+  },
+  {
+    "name": "Norway",
+    "population": 5400000,
+    "gdp": 482000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
+    "continent": "Europe"
+  },
+  {
+    "name": "Malaysia",
+    "population": 33000000,
+    "gdp": 372000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg",
+    "continent": "Asia"
+  },
+  {
+    "name": "Bangladesh",
+    "population": 170000000,
+    "gdp": 460000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg",
+    "continent": "Asia"
+  },
+  {
+    "name": "Philippines",
+    "population": 114000000,
+    "gdp": 425000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg",
+    "continent": "Asia"
+  },
+  {
+    "name": "Colombia",
+    "population": 52000000,
+    "gdp": 410000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
+    "continent": "South America"
   }
 ]
