@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: . # Set context to root where Dockerfile exists
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount your local project files for development
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
