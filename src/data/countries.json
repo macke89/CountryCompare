@@ -5,7 +5,8 @@
     "gdp": 25000000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
-    "continent": "North America"
+    "continent": "North America",
+    "iso_code": "US"
   },
   {
     "name": "China",
@@ -13,7 +14,8 @@
     "gdp": 19000000000000,
     "group": 0,
     "flag": "https://flagpedia.net/data/flags/w580/cn.png",
-    "continent": "Asia"
+    "continent": "Asia",
+    "iso_code": "CN"
   },
   {
     "name": "India",
@@ -21,7 +23,8 @@
     "gdp": 3700000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
-    "continent": "Asia"
+    "continent": "Asia",
+    "iso_code": "IN"
   },
   {
     "name": "Japan",
@@ -29,7 +32,8 @@
     "gdp": 4900000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
-    "continent": "Asia"
+    "continent": "Asia",
+    "iso_code": "JP"
   },
   {
     "name": "Germany",
@@ -37,7 +41,8 @@
     "gdp": 4200000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
-    "continent": "Europe"
+    "continent": "Europe",
+    "iso_code": "DE"
   },
   {
     "name": "UK",
@@ -45,7 +50,8 @@
     "gdp": 3100000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
-    "continent": "Europe"
+    "continent": "Europe",
+    "iso_code": "GB"
   },
   {
     "name": "France",
@@ -53,7 +59,8 @@
     "gdp": 2780000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg",
-    "continent": "Europe"
+    "continent": "Europe",
+    "iso_code": "FR"
   },
   {
     "name": "Italy",
@@ -61,7 +68,8 @@
     "gdp": 2000000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg",
-    "continent": "Europe"
+    "continent": "Europe",
+    "iso_code": "IT"
   },
   {
     "name": "Brazil",
@@ -69,7 +77,8 @@
     "gdp": 1900000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg",
-    "continent": "South America"
+    "continent": "South America",
+    "iso_code": "BR"
   },
   {
     "name": "Canada",
@@ -77,7 +86,8 @@
     "gdp": 2200000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
-    "continent": "North America"
+    "continent": "North America",
+    "iso_code": "CA"
   },
   {
     "name": "Russia",
@@ -85,7 +95,8 @@
     "gdp": 1800000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg",
-    "continent": "Europe/Asia"
+    "continent": "Europe/Asia",
+    "iso_code": "RU"
   },
   {
     "name": "South Korea",
@@ -93,7 +104,8 @@
     "gdp": 1800000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
-    "continent": "Asia"
+    "continent": "Asia",
+    "iso_code": "KR"
   },
   {
     "name": "Australia",
@@ -101,7 +113,8 @@
     "gdp": 1700000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg",
-    "continent": "Oceania"
+    "continent": "Oceania",
+    "iso_code": "AU"
   },
   {
     "name": "Mexico",
@@ -109,7 +122,8 @@
     "gdp": 1200000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg",
-    "continent": "North America"
+    "continent": "North America",
+    "iso_code": "MX"
   },
   {
     "name": "Spain",
@@ -117,7 +131,8 @@
     "gdp": 1400000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg",
-    "continent": "Europe"
+    "continent": "Europe",
+    "iso_code": "ES"
   },
   {
     "name": "Turkey",
@@ -125,7 +140,8 @@
     "gdp": 940000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
-    "continent": "Europe/Asia"
+    "continent": "Europe/Asia",
+    "iso_code": "TR"
   },
   {
     "name": "Netherlands",
@@ -133,7 +149,8 @@
     "gdp": 1000000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg",
-    "continent": "Europe"
+    "continent": "Europe",
+    "iso_code": "NL"
   },
   {
     "name": "Saudi Arabia",
@@ -141,7 +158,8 @@
     "gdp": 800000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg",
-    "continent": "Asia"
+    "continent": "Asia",
+    "iso_code": "SA"
   },
   {
     "name": "Indonesia",
@@ -149,7 +167,8 @@
     "gdp": 1250000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg",
-    "continent": "Asia"
+    "continent": "Asia",
+    "iso_code": "ID"
   },
   {
     "name": "Argentina",
@@ -157,118 +176,7 @@
     "gdp": 500000000000,
     "group": 0,
     "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg",
-    "continent": "South America"
-  },
-  {
-    "name": "Nigeria",
-    "population": 220000000,
-    "gdp": 510000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
-    "continent": "Africa"
-  },
-  {
-    "name": "South Africa",
-    "population": 60000000,
-    "gdp": 420000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
-    "continent": "Africa"
-  },
-  {
-    "name": "Vietnam",
-    "population": 97000000,
-    "gdp": 400000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Egypt",
-    "population": 109000000,
-    "gdp": 370000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg",
-    "continent": "Africa"
-  },
-  {
-    "name": "Sweden",
-    "population": 10400000,
-    "gdp": 630000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Sweden.svg",
-    "continent": "Europe"
-  },
-  {
-    "name": "Switzerland",
-    "population": 8700000,
-    "gdp": 810000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg",
-    "continent": "Europe"
-  },
-  {
-    "name": "Thailand",
-    "population": 70000000,
-    "gdp": 545000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Iran",
-    "population": 87000000,
-    "gdp": 388000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Pakistan",
-    "population": 230000000,
-    "gdp": 347000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Norway",
-    "population": 5400000,
-    "gdp": 482000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
-    "continent": "Europe"
-  },
-  {
-    "name": "Malaysia",
-    "population": 33000000,
-    "gdp": 372000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Bangladesh",
-    "population": 170000000,
-    "gdp": 460000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Philippines",
-    "population": 114000000,
-    "gdp": 425000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg",
-    "continent": "Asia"
-  },
-  {
-    "name": "Colombia",
-    "population": 52000000,
-    "gdp": 410000000000,
-    "group": 0,
-    "flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
-    "continent": "South America"
+    "continent": "South America",
+    "iso_code": "AR"
   }
 ]

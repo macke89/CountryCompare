@@ -53,7 +53,7 @@ export const Graph = ({ data, title, labels }: GraphProps) => {
   };
 
   return (
-    <div className="mx-auto max-w-md p-6">
+    <div className="max-w-md">
       <h3 className="pb-4 text-center text-lg font-semibold text-gray-900">
         {title}
       </h3>

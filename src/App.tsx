@@ -1,105 +1,75 @@
-import { TableRow } from './TableRow.tsx';
-import TableHeader from './TableHeader.tsx';
 import Compare from './Compare.tsx';
 import { useEffect, useState } from 'react';
+import { Map } from './Map.tsx';
+import { SearchResult } from './SearchResult.tsx';
 
 function App() {
+  // Empty country data
   const [countriesData, setCountriesData] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
-
+  // Get country data from JSON on load
   useEffect(() => {
     import('./data/countries.json')
-        .then((data) => setCountriesData(data.default))
-        .catch((error) => console.error('Error loading countries data:', error));
+      .then((data) => setCountriesData(data.default))
+      .catch((error) => console.error('Error loading countries data:', error));
   }, []);
 
-  const formatWithCommas = (value: number): string => {
-    return value.toLocaleString();
-  };
-
-  const formatGDPInTrillions = (gdp: number): string => {
-    return `${(gdp / 1_000_000_000_000).toFixed(2)}T`;
-  };
-
-  const totalPopulation = countriesData
-      .map((country) => country.population)
-      .reduce((sum, current) => sum + current, 0);
-
-  const totalGDP = countriesData
-      .map((country) => country.gdp)
-      .reduce((sum, current) => sum + current, 0);
-
+  // Function to add and remove countries from groups
   const updateGroup = (index: number) => {
     setCountriesData((prevData) =>
-        prevData.map((country, i) =>
-            i === index
-                ? { ...country, group: (country.group + 1) % 3 }
-                : country
-        )
+      prevData.map((country, i) =>
+        i === index ? { ...country, group: (country.group + 1) % 3 } : country,
+      ),
     );
   };
 
   const filteredCountries = countriesData.filter((country) =>
-      country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    country.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
-
-  const formattedCountriesData = filteredCountries.map((country) => {
-    return {
-      ...country,
-      population: formatWithCommas(country.population),
-      populationPercentage: `${((country.population / totalPopulation) * 100).toFixed(
-          2
-      )}%`,
-      gdp: `$${formatGDPInTrillions(country.gdp)}`,
-      gdpPercentage: `${((country.gdp / totalGDP) * 100).toFixed(2)}%`,
-    };
-  });
 
   const countriesInGroup = countriesData.filter((country) => country.group > 0);
 
   return (
-      <div className="flex flex-col justify-center min-h-screen lg:flex-row gap-4 items-start">
-        <Compare countries={countriesInGroup} />
-
+    <div className="flex flex-col p-2">
+      <div>
+        {/*Map Container*/}
         <div>
-          <div className="mb-4 w-full max-w-xl">
+          <Map countries={countriesData}/>
+        </div>
+        {/*Search Input Container*/}
+        <div className="my-4">
+          <label
+            htmlFor="email"
+            className="block text-sm/6 font-medium text-gray-900 select-none"
+          >
+            Search Countries
+          </label>
+          <div className="mt-2">
             <input
-                type="text"
-                className="w-full rounded border border-gray-300 px-4 py-2"
-                placeholder="Search countries"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+              type="text"
+              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+              placeholder="Search countries"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
+        </div>
 
-          <div className="block w-full max-w-xl overflow-x-auto border">
-            <table className="w-full table-fixed border-collapse items-center bg-transparent">
-              <thead>
-              <tr>
-                <TableHeader>Country</TableHeader>
-                <TableHeader>Population</TableHeader>
-                <TableHeader>Population %</TableHeader>
-                <TableHeader>GDP</TableHeader>
-                <TableHeader>GDP %</TableHeader>
-              </tr>
-              </thead>
-              <tbody
-                  className="divide-y divide-gray-100"
-                  style={{minHeight: '300px'}}
-              >
-              {formattedCountriesData.map((country, index) => (
-                  <TableRow
-                      key={index}
-                      country={country}
-                      index={index}
-                      onGroupClick={() => updateGroup(index)}
-                  />
-              ))}
-              </tbody>
-            </table>
-          </div>
+        {/*Search Results Container*/}
+        <div className="flex flex-row flex-wrap gap-2">
+          {filteredCountries.map((country, index) => (
+            <SearchResult
+              key={index}
+              country={country}
+              index={index}
+              onGroupClick={() => updateGroup(index)}
+            />
+          ))}
         </div>
       </div>
+
+      <Compare countries={countriesInGroup} />
+    </div>
   );
 }
 
