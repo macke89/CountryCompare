@@ -178,5 +178,140 @@
     "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg",
     "continent": "South America",
     "iso_code": "AR"
+  },
+  {
+    "name": "Nigeria",
+    "population": 223000000,
+    "gdp": 504000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+    "continent": "Africa",
+    "iso_code": "NG"
+  },
+  {
+    "name": "South Africa",
+    "population": 60000000,
+    "gdp": 411000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
+    "continent": "Africa",
+    "iso_code": "ZA"
+  },
+  {
+    "name": "Egypt",
+    "population": 106000000,
+    "gdp": 435000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg",
+    "continent": "Africa",
+    "iso_code": "EG"
+  },
+  {
+    "name": "Kenya",
+    "population": 55000000,
+    "gdp": 114000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg",
+    "continent": "Africa",
+    "iso_code": "KE"
+  },
+  {
+    "name": "Ethiopia",
+    "population": 120000000,
+    "gdp": 127000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg",
+    "continent": "Africa",
+    "iso_code": "ET"
+  },
+  {
+    "name": "Ghana",
+    "population": 33000000,
+    "gdp": 81000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg",
+    "continent": "Africa",
+    "iso_code": "GH"
+  },
+  {
+    "name": "Algeria",
+    "population": 45000000,
+    "gdp": 170000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg",
+    "continent": "Africa",
+    "iso_code": "DZ"
+  },
+  {
+    "name": "Morocco",
+    "population": 37000000,
+    "gdp": 140000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg",
+    "continent": "Africa",
+    "iso_code": "MA"
+  },
+  {
+    "name": "Angola",
+    "population": 36000000,
+    "gdp": 100000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg",
+    "continent": "Africa",
+    "iso_code": "AO"
+  },
+  {
+    "name": "Tanzania",
+    "population": 64000000,
+    "gdp": 69000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg",
+    "continent": "Africa",
+    "iso_code": "TZ"
+  },
+  {
+    "name": "Uganda",
+    "population": 47000000,
+    "gdp": 41000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg",
+    "continent": "Africa",
+    "iso_code": "UG"
+  },
+  {
+    "name": "Sudan",
+    "population": 46000000,
+    "gdp": 34000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan.svg",
+    "continent": "Africa",
+    "iso_code": "SD"
+  },
+  {
+    "name": "Ivory Coast",
+    "population": 29000000,
+    "gdp": 70500000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Côte_d%27Ivoire.svg",
+    "continent": "Africa",
+    "iso_code": "CI"
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "population": 95000000,
+    "gdp": 55000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg",
+    "continent": "Africa",
+    "iso_code": "CD"
+  },
+  {
+    "name": "Zambia",
+    "population": 19000000,
+    "gdp": 24000000000,
+    "group": 0,
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg",
+    "continent": "Africa",
+    "iso_code": "ZM"
   }
 ]
