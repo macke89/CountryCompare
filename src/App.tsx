@@ -2,7 +2,8 @@ import React from 'react';
 import { fetchAndMergeCountryData, CountryData } from './utils.ts'; // Use utility function for data merging
 import { SearchBar } from './SearchBar.tsx'; // Reusable search bar
 import { SearchResult } from './SearchResult.tsx';
-// import { Map } from './Map.tsx';
+import { Map } from './Map.tsx';
+// import { Graph } from './Graph.tsx';
 
 export const App: React.FC = () => {
   const [filteredCountries, setFilteredCountries] = React.useState<
@@ -21,8 +22,8 @@ export const App: React.FC = () => {
   // Filter search results dynamically
   const searchResults = searchTerm
     ? filteredCountries.filter((country) =>
-      country.country_name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+        country.country_name.toLowerCase().includes(searchTerm.toLowerCase()),
+      )
     : [];
 
   // Toggle the group value for a country
@@ -30,7 +31,7 @@ export const App: React.FC = () => {
     const updatedCountries = filteredCountries.map((country) =>
       country.country_id === countryId
         ? { ...country, group: (country.group + 1) % 3 } // Cycle group: 0 → 1 → 2 → 0
-        : country
+        : country,
     );
 
     setFilteredCountries(updatedCountries);
@@ -38,7 +39,8 @@ export const App: React.FC = () => {
 
   return (
     <div>
-      {/*<Map countries={} onCountryClick={}/>*/}
+      <Map countries={filteredCountries} onCountryClick={changeCountryGroup} />
+      {/*<Graph data={} title={} labels={}/>*/}
       <div className="p-4">
         {/* Search Bar Component */}
         <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
@@ -56,6 +58,6 @@ export const App: React.FC = () => {
           ))}
         </div>
       </div>
-
-    </div>);
+    </div>
+  );
 };

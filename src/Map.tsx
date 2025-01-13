@@ -1,17 +1,19 @@
+import React from 'react';
+
 type Country = {
-  iso_code: string;
-  group: number;
+  country_id: string; // ISO code of a country
+  group: number; // Group value (0 = gray, 1 = blue, 2 = red)
 };
 
 type MapProps = {
-  countries: Country[];
-  onCountryClick: (iso_code: string) => void;
+  countries: Country[]; // List of all countries (with group data)
+  onCountryClick: (iso_code: string) => void; // Callback when a country is clicked
 };
 
-export const Map = ({ countries, onCountryClick }: MapProps) => {
-  // Function to calculate the fill color based on the group
-  const getColorByIso = (iso_code: string): string => {
-    const country = countries.find((c) => c.iso_code === iso_code);
+export const Map: React.FC<MapProps> = ({ countries, onCountryClick }) => {
+  // Function to determine the fill color of each country's group
+  const getColorByIso = (country_id: string): string => {
+    const country = countries.find((c) => c.country_id === country_id);
 
     // Return a color based on the current group
     switch (country?.group) {
@@ -20,9 +22,10 @@ export const Map = ({ countries, onCountryClick }: MapProps) => {
       case 2:
         return 'red';
       default:
-        return 'gray';
+        return 'gray'; // Default to gray for ungrouped countries
     }
   };
+
   return (
     <>
       <svg
