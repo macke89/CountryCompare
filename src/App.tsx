@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchAndMergeCountryData, CountryData } from './utils.ts'; // Use utility function for data merging
+import { fetchAndMergeCountryData, CountryData } from './data/utils.ts'; // Use utility function for data merging
 import { SearchBar } from './SearchBar.tsx'; // Reusable search bar
 import { SearchResult } from './SearchResult.tsx';
 import { Map } from './Map.tsx';

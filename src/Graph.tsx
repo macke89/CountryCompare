@@ -1,6 +1,6 @@
 import { ApexOptions } from 'apexcharts';
 import ApexCharts from 'react-apexcharts';
-import { CountryData } from './utils';
+import { CountryData } from './data/utils.ts';
 
 interface GraphProps {
   countries: CountryData[];

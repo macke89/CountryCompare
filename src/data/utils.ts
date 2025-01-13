@@ -1,6 +1,6 @@
 // utils.ts
-import { fetchCountryData, PopulationData, GdpData } from './apiService';
-import { isoCodes } from './data/isoCodes.ts';
+import { fetchCountryData, PopulationData, GdpData } from '../apiService.tsx';
+import { isoCodes } from './isoCodes.ts';
 
 export interface CountryData
   extends PopulationData,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryData } from './utils.ts'; // Import the exported CountryData from App.tsx
+import { CountryData } from './data/utils.ts'; // Import the exported CountryData from App.tsx
 interface SearchResultProps {
   country: CountryData;
   index?: number;
