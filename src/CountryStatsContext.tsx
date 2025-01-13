@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { isoCodes } from './data/isoCodes'; // Import the list of allowed ISO codes
+import { isoCodes } from './data/isoCodes.ts'; // Import the list of allowed ISO codes
 
 // Define the shape of a country's statistics
 interface CountryStats {
