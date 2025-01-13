@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Expose the app's port
-EXPOSE 3000
+EXPOSE 3002
 
 # Start the app in preview mode
 CMD ["npm", "run", "preview"]

@@ -1,91 +1,103 @@
-import Compare from './Compare.tsx';
-import { useEffect, useState } from 'react';
-import { Map } from './Map.tsx';
+import React from 'react';
+import { fetchCountryData, PopulationData, GdpData } from './apiService';
+import { isoCodes } from './data/isoCodes.tsx';
 import { SearchResult } from './SearchResult.tsx';
 
-function App() {
-  // State for countries and search
-  const [countriesData, setCountriesData] = useState<any[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
+// Extending PopulationData and GdpData makes sure you inherit the API structure
+export interface CountryData
+  extends PopulationData,
+    Omit<GdpData, 'country_name'> {
+  group: number; // Custom property for app-specific functionality
+}
 
-  // Load country data on mount
-  useEffect(() => {
-    import('./data/countries.json')
-      .then((data) => setCountriesData(data.default))
-      .catch((error) => console.error('Error loading countries data:', error));
+export const App = () => {
+  const [filteredCountries, setFilteredCountries] = React.useState<
+    CountryData[]
+  >([]);
+  const [searchTerm, setSearchTerm] = React.useState<string>(''); // Track the input's value
+
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const { populationData, gdpData } = await fetchCountryData();
+
+        // Merging populationData and gdpData into a single array
+        const countryData: CountryData[] = populationData.map((popData) => {
+          // Find corresponding GDP entry by country_id
+          const gdpDataEntry = gdpData.find(
+            (gdp) => gdp.country_id === popData.country_id,
+          );
+
+          return {
+            ...popData, // Include all PopulationData fields
+            total_gdp: gdpDataEntry ? gdpDataEntry.total_gdp : 0, // Fallback to 0 if no match
+            group: 0, // Add group property with default value
+          };
+        });
+
+        // Filtered countries based on ISO codes
+        const filteredCountries: CountryData[] = countryData.filter(
+          (data) => isoCodes.includes(data.country_id), // Ensure only valid ISO codes are included
+        );
+
+        setFilteredCountries(filteredCountries); // Save filteredCountries in state
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    })(); // Call the function immediately
   }, []);
 
-  // Function to update the group for a country by index
-  const updateGroup = (index: number) => {
-    setCountriesData((prevData) =>
-      prevData.map((country, i) =>
-        i === index ? { ...country, group: (country.group + 1) % 3 } : country,
-      ),
+// Dynamically derive the search results based on the current search term
+  const searchResults = searchTerm
+    ? filteredCountries.filter((country) =>
+      country.country_name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    : [];
+
+  function changeCountryGroup(countryId: string) {
+    const updatedCountries = filteredCountries.map((country) =>
+      country.country_id === countryId
+        ? {
+            ...country,
+            group: (country.group + 1) % 3, // Cycle the group value: 0 → 1 → 2 → 0
+          }
+        : country,
     );
-  };
 
-  // Function to update group by ISO code (for use in Map)
-  const updateGroupByIso = (iso_code: string) => {
-    setCountriesData((prevData) =>
-      prevData.map((country) =>
-        country.iso_code === iso_code
-          ? { ...country, group: (country.group + 1) % 3 }
-          : country,
-      ),
-    );
-  };
+    setFilteredCountries(updatedCountries); // Update the filteredCountries state
+  }
 
-  // Filter countries by search term
-  const filteredCountries = countriesData.filter((country) =>
-    country.name.toLowerCase().includes(searchTerm.toLowerCase()),
-  );
-
-  // Countries assigned to a group
-  const countriesInGroup = countriesData.filter((country) => country.group > 0);
+  function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchTerm(e.target.value); // Update the searchTerm on user input
+  }
 
   return (
-    <div className="flex flex-col gap-4 p-2 lg:flex-row">
-      {/*1 Country Selection Container*/}
-      <div className="lg:w-1/2">
-        {/*2 Map Container*/}
-        <div>
-          <Map countries={countriesData} onCountryClick={updateGroupByIso} />
+    <>
+      <div className="p-4">
+        <label className="block select-none text-sm/6 font-medium text-gray-900">
+          Search Countries
+        </label>
+        <div className="mt-2">
+          <input
+            type="text"
+            value={searchTerm} // Bind the input to searchTerm
+            onChange={handleSearchChange} // Update searchTerm on user input
+            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            placeholder="Search countries"
+          />
         </div>
-        {/*2 Search Container*/}
-        <div className="my-4">
-          <label className="block select-none text-sm/6 font-medium text-gray-900">
-            Search Countries
-          </label>
-          <div className="mt-2">
-            <input
-              type="text"
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              placeholder="Search countries"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </div>
-
-        {/*1 Search Results Container */}
+        <br />
         <div className="flex flex-row flex-wrap gap-2">
-          {filteredCountries.map((country, index) => (
+          {searchResults.map((country, index) => (
             <SearchResult
-              key={country.iso_code}
+              key={index}
               country={country}
               index={index}
-              onGroupClick={() => updateGroup(index)}
+              onClick={changeCountryGroup}
             />
           ))}
         </div>
       </div>
-
-      {/* Compare Component Container */}
-      <div className="lg:w-1/2">
-        <Compare countries={countriesInGroup} />
-      </div>
-    </div>
+    </>
   );
-}
-
-export default App;
+};

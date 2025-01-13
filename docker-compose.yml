@@ -5,7 +5,7 @@ services:
     build:
       context: . # Set context to root where Dockerfile exists
     ports:
-      - "3000:3000"
+      - "3002:3002"
     volumes:
       # Mount your local project files for development
       - .:/app

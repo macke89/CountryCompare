@@ -5,7 +5,7 @@ type Country = {
 
 type MapProps = {
   countries: Country[];
-  onCountryClick: (iso_code: string) => void; // Callback from parent to update group
+  onCountryClick: (iso_code: string) => void;
 };
 
 export const Map = ({ countries, onCountryClick }: MapProps) => {
@@ -20,7 +20,7 @@ export const Map = ({ countries, onCountryClick }: MapProps) => {
       case 2:
         return 'red';
       default:
-        return 'gray'; // Default for group 0
+        return 'gray';
     }
   };
   return (

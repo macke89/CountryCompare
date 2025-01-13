@@ -1,43 +1,40 @@
-type SearchResultProps = {
-  country: {
-    name: string;
-    population: string;
-    populationPercentage: string;
-    gdp: string;
-    gdpPercentage: string;
-    group: number;
-    flag: string; // Add this to display the flag
-  };
-  index: number;
-  onGroupClick: () => void;
-};
-export const SearchResult = ({
+import React from 'react';
+import { CountryData } from './App'; // Import the exported CountryData from App.tsx
+interface SearchResultProps {
+  country: CountryData;
+  index?: number;
+  onClick: (country_id: string) => void;
+}
+
+export const SearchResult: React.FC<SearchResultProps> = ({
   country,
   index,
-  onGroupClick,
-}: SearchResultProps) => {
-  // Determine the base and hover colors dynamically based on the group property
-  const groupStyles =
-    country.group === 1
-      ? 'bg-blue-500 text-white hover:bg-red-200'
-      : country.group === 2
-        ? 'bg-red-500 text-white hover:bg-gray-200'
-        : 'bg-gray-300 text-gray-600 hover:bg-blue-100';
+  onClick,
+}) => {
+  const getBackgroundColor = () => {
+    switch (
+      country.group // Use country.group directly
+    ) {
+      case 0:
+        return 'bg-gray-200'; // Light gray background
+      case 1:
+        return 'bg-blue-200'; // Light blue background
+      case 2:
+        return 'bg-red-200'; // Light red background
+      default:
+        return 'bg-white'; // Default to white
+    }
+  };
 
   return (
-    <>
-      <span
-        key={index}
-        onClick={onGroupClick}
-        className={`inline-flex cursor-pointer items-center gap-x-1.5 rounded-full px-2 py-1 font-medium select-none ${groupStyles}`}
-      >
-        <img
-          src={country.flag}
-          alt={`${country.name} flag`}
-          className="h-6 w-6 rounded-full"
-        />
-        {country.name}
-      </span>
-    </>
+    <div
+      key={index}
+      onClick={() => onClick(country.country_id)}
+      className={`flex cursor-pointer select-none flex-col items-start rounded-md border p-2 shadow-sm ${getBackgroundColor()}`}
+    >
+      <h3 className="font-bold">{country.country_name}</h3>
+      <p>Population: {country.total_population.toLocaleString()}</p>
+      <p>GDP: {country.total_gdp.toLocaleString()}</p>
+    </div>
   );
 };
